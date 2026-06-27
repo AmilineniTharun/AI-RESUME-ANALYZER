@@ -7,10 +7,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Configure Gemini API key from environment or default fallback
+# Configure Gemini API key from environment
 default_key = os.environ.get("GEMINI_API_KEY")
 if not default_key or default_key == "YOUR_GEMINI_API_KEY_HERE":
-    default_key = "YOUR_GEMINI_API_KEY_HERE"
+    default_key = None
 
 if default_key:
     genai.configure(api_key=default_key)
@@ -33,7 +33,7 @@ def extract_text_from_image(image_file, api_key=None, model_name='gemini-2.5-fla
     load_dotenv(override=True)
     current_key = os.environ.get("GEMINI_API_KEY")
     if not current_key or current_key == "YOUR_GEMINI_API_KEY_HERE":
-        current_key = "AIzaSyAqjxwljWbWvlxhNmBGhk5o3L3UfrUzKx0"
+        current_key = None
     
     if api_key and api_key.strip():
         genai.configure(api_key=api_key.strip())
@@ -60,7 +60,7 @@ def analyze_resume(resume_text, job_description, api_key=None, model_name='gemin
     load_dotenv(override=True)
     current_key = os.environ.get("GEMINI_API_KEY")
     if not current_key or current_key == "YOUR_GEMINI_API_KEY_HERE":
-        current_key = "AIzaSyAqjxwljWbWvlxhNmBGhk5o3L3UfrUzKx0"
+        current_key = None
     
     if api_key and api_key.strip():
         genai.configure(api_key=api_key.strip())
@@ -131,7 +131,7 @@ def chat_with_gemini(chat_history, user_message, resume_text, job_description=No
     load_dotenv(override=True)
     current_key = os.environ.get("GEMINI_API_KEY")
     if not current_key or current_key == "YOUR_GEMINI_API_KEY_HERE":
-        current_key = "AIzaSyAqjxwljWbWvlxhNmBGhk5o3L3UfrUzKx0"
+        current_key = None
     
     if api_key and api_key.strip():
         genai.configure(api_key=api_key.strip())
