@@ -10,7 +10,7 @@ load_dotenv()
 # Configure Gemini API key from environment or default fallback
 default_key = os.environ.get("GEMINI_API_KEY")
 if not default_key or default_key == "YOUR_GEMINI_API_KEY_HERE":
-    default_key = "AIzaSyAqjxwljWbWvlxhNmBGhk5o3L3UfrUzKx0"
+    default_key = "YOUR_GEMINI_API_KEY_HERE"
 
 if default_key:
     genai.configure(api_key=default_key)
